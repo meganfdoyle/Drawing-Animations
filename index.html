@@ -1,12 +1,59 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     </head>
     <body>
-        <input id="duration" value="30"/>
-        <button id="start">Start</button>
-        <button id="pause">Pause</button>
-
+        <div class="timer">
+          <div class="controls">
+            <input id="duration" value="3" />
+            <div>
+                <button id="start"><i class="fa-solid fa-play"></i></button>
+                <button id="pause"><i class="fa-solid fa-pause"></i></button>
+            </div>
+          </div>
+          <svg class="dial">
+            <circle
+              fill="transparent"
+              stroke="green"
+              stroke-width="15"
+              r="190"
+              cx="0"
+              cy="200"
+              transform="rotate(-90 100 100)"
+            />
+          </svg>
+        </div>
+    
+        <script src="timer.js"></script>
         <script src="drawingAnimation.js"></script>
-    </body>
-</html>
+      </body>
+    </html>
+
+<!--
+SVG (Scalable Vector Graphics) elements
+  - Rules
+    - Canvases where we can draw different shapes
+        -Polygons, ellipses, squares, rectangles, and paths
+    - Origin is the top left corner of the canvas
+        - x axis increases left to right
+        - y axis increases from top to bottom
+        - Rarely have negative x or y values because that would be outside of the SVG (not visible)
+
+    - Circles
+        - Perimeter = 2 * pi * r
+        - r is radius, cx and cy specify the centerpoint of the circle
+        - The content inside of the circle is called the fill
+        - The border of the circle is called the stroke
+        - stroke-dasharray 
+            - First value specifies the length of a dash around the perimeter of the circle
+            - The second is the spacing in between dashes
+            - Starts in the middle of the right hand side and moves clockwise            
+        - stroke-dashoffset
+            - Defines where the dash of a stroke will begin
+        - rotation
+            - First value is rotation and direction
+            - The second two values are the point at which you want to rotate around (center of the circle)
+
+-->
